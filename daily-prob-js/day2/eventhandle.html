@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <body>
+
+    <h3>Test 1: Default Submit (Page Reload)</h3>
+    <form id="form1">
+      <input placeholder="Type something" />
+      <button type="submit">Submit (Reload)</button>
+    </form>
+
+    <hr />
+
+    <h3>Test 2: preventDefault (No Reload)</h3>
+    <form id="form2">
+      <input placeholder="Type something" />
+      <button type="submit">Submit (No Reload)</button>
+    </form>
+
+    <hr />
+
+    <h3>Test 3: Normal Button</h3>
+    <button id="normalBtn" type="button">Just Click</button>
+
+    <script>
+      // Test 1: No preventDefault
+      document.getElementById("form1").addEventListener("submit", (e) => {
+        console.log("Form1 Submitted");
+        // No preventDefault → page reload
+      });
+
+      // Test 2: With preventDefault
+    //   document.getElementById("form2").addEventListener("submit", (e) => {
+    //     e.preventDefault();
+    //     console.log("Form2 handled manually (No reload)");
+    //   });
+
+    document.getElementById("form2").addEventListener("submit", (e) => {
+  console.log("defaultPrevented:", e.defaultPrevented);
+  e.preventDefault();
+  console.log("After prevent:", e.defaultPrevented);
+});
+
+      // Test 3: Normal button
+      document.getElementById("normalBtn").addEventListener("click", () => {
+        console.log("Normal button clicked");
+      });
+    </script>
+
+  </body>
+</html>
