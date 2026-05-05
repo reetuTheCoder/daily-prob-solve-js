@@ -1,0 +1,22 @@
+#parent {
+  background-color: lightblue;
+  padding: 20px;
+  cursor: pointer;
+}
+#child1 {
+  background-color: lightgray;
+  padding: 20px;
+  cursor: pointer;
+}
+
+#child2 {
+  background-color: pink;
+  padding: 80px;
+  cursor: pointer;
+}
+
+#grandchild {
+  background-color: olive;
+  padding: 30px;
+  cursor: pointer;
+}
